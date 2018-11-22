@@ -132,3 +132,11 @@ class VisualTestCase(unittest.TestCase):
         )
         self.run_for_a_while()
         self.assert_content_is_not_sticking_out()
+
+    def test_setting_font_size_affects_nothing(self):
+        self.methodname = sys._getframe().f_code.co_name
+        self.label = label = FlexibleLabel(text='Hello Kivy')
+        label.texture_update()
+        label.font_size = 100
+        self.run_for_a_while()
+        self.assert_content_is_not_sticking_out()

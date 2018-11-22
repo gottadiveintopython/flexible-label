@@ -59,7 +59,7 @@ class FlexibleLabel(Label):
         # font_size_minからfont_size_maxまでの範囲内でfont_sizeを設定
         # --------------------------------------------------------------------
         new_font_size = max(self.font_size_min or 1,
-                            min(self.font_size * scaling,
+                            min(self._label.options['font_size'] * scaling,
                                 self.font_size_max or 99999))
         self.font_size = new_font_size
         self._label.options['font_size'] = new_font_size
