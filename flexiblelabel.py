@@ -11,8 +11,12 @@ class FlexibleLabel(Label):
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self.funbind('font_size', self._trigger_texture_update, 'font_size')
-        self.fbind('size', self._trigger_texture_update)
+        _trigger_texture_update = self._trigger_texture_update
+        fbind = self.fbind
+        self.funbind('font_size', _trigger_texture_update, 'font_size')
+        fbind('size', _trigger_texture_update)
+        fbind('font_size_max', _trigger_texture_update)
+        fbind('font_size_min', _trigger_texture_update)
 
     def texture_update(self, *largs):
         self._adjust_font_size()
