@@ -2,7 +2,7 @@ import os
 os.environ['KIVY_TEXT'] = 'sdl2'
 import unittest
 
-from _visual_test import *
+from _test_sticking_out import *
 
 
 class IsProviderSDL2TestCase(unittest.TestCase):

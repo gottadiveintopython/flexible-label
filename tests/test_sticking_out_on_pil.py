@@ -2,7 +2,7 @@ import os
 os.environ['KIVY_TEXT'] = 'pil'
 import unittest
 
-from _visual_test import *
+from _test_sticking_out import *
 
 
 class IsProviderPILTestCase(unittest.TestCase):

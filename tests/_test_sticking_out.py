@@ -1,4 +1,4 @@
-__all__ = ('VisualTestCase', )
+__all__ = ('StickingOutTestCase', )
 
 import sys
 import unittest
@@ -14,11 +14,11 @@ from kivy.core.window import Window
 from kivy.core.text import Label as CoreLabel
 IS_PROVIDER_SDL2 = CoreLabel.__name__ == 'LabelSDL2'
 
-import before_test
+import _before_test
 from flexiblelabel import FlexibleLabel
 
 
-class VisualTestCase(unittest.TestCase):
+class StickingOutTestCase(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
@@ -31,7 +31,7 @@ class VisualTestCase(unittest.TestCase):
     def tearDown(self):
         label = self.label
         Window.screenshot(str(
-            self.screenshot_dir / 'visual_{}..png'.format(self.methodname)))
+            self.screenshot_dir / 'sticking_out_{}..png'.format(self.methodname)))
         Window.remove_widget(label)
 
     def run_for_a_while(self, *, duration=1.5):
