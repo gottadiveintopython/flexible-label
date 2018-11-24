@@ -9,7 +9,6 @@ pillow = "*"
 kivy = "==1.10.1"
 
 [dev-packages]
-nose = "*"
 
 [requires]
 python_version = "3.6"
