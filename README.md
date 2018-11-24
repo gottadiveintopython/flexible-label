@@ -148,6 +148,17 @@ runTouchApp(root)
 
 こういった事が起こる原因は全く分かっていない。
 
+## Testに関して
+
+testはtext providerの種類ごとに分けて行う。
+
+```
+python -m unittest discover --start-directory ./tests --pattern test_*_on_sdl2.py
+python -m unittest discover --start-directory ./tests --pattern test_*_on_pil.py
+```
+
+また今の所、`test_sticking_out_on_xxx.py`(文字列がLabelからはみ出ていないかを確かめるtest)は通っていない。
+
 ## 他
 
 [Youtube](https://youtu.be/HhxQW7ZFon4)
