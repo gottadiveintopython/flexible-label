@@ -41,8 +41,8 @@ class FlexibleLabel(Label):
         # --------------------------------------------------------------------
         # 実際に利用可能な領域の大きさ
         # --------------------------------------------------------------------
-        dst_width = self.width - 2 * self.padding_x
-        dst_height = self.height - 2 * self.padding_y
+        dst_width = (self.text_size[0] or self.width) - 2 * self.padding_x
+        dst_height = (self.text_size[1] or self.height) - 2 * self.padding_y
 
         # --------------------------------------------------------------------
         # [予測した大きさ]と[実際に利用可能な領域の大きさ]の縦横比を求め、そこ
