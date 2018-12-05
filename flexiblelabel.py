@@ -23,6 +23,9 @@ class FlexibleLabel(Label):
         return super().texture_update(*largs)
 
     def _adjust_font_size(self):
+        if self.text == '':
+            return
+
         # --------------------------------------------------------------------
         # 現在のfont_sizeで描画した時にどれぐらいの大きさの領域が要るのか予測
         # (正確な計算はできていない)
@@ -42,11 +45,17 @@ class FlexibleLabel(Label):
         pred_content_width = max(width for (width, height) in line_size_list)
         pred_content_height = sum(height for (width, height) in line_size_list)
 
+        if pred_content_width <= 0 or pred_content_height <= 0:
+            return
+
         # --------------------------------------------------------------------
         # 実際に利用可能な領域の大きさ
         # --------------------------------------------------------------------
         dst_width = (self.text_size[0] or self.width) - 2 * self.padding_x
         dst_height = (self.text_size[1] or self.height) - 2 * self.padding_y
+
+        if dst_width <= 0 or dst_height <= 0:
+            return
 
         # --------------------------------------------------------------------
         # [予測した大きさ]と[実際に利用可能な領域の大きさ]の縦横比を求め、そこ
