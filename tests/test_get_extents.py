@@ -209,6 +209,35 @@ class Test_bold_italic_fontname:
         assert actual_size == pred_size
 
 
+@pytest.mark.skipif(
+    PROVIDER != 'sdl2',
+    reason="'underline' and 'strikethrough' are exclusive to sdl2")
+class Test_underline_strikethrough:
+    parametrize = pytest.mark.parametrize(
+        'name, value',
+        [('underline', True), ('strikethrough', True), ]
+    )
+
+    @parametrize
+    def test_doesnt_affect_prediction(self, label_cls, name, value):
+        label = label_cls()
+        label2 = label_cls(**{name: value})
+        ge = label._label.get_extents
+        text = 'Kivy'
+        size1 = label._label.get_extents(text)
+        size2 = label2._label.get_extents(text)
+        assert size1 == size2
+
+    @parametrize
+    def test_actual_size(self, label_cls, name, value):
+        text = 'Kivy'
+        label = label_cls(text=text, **{name: value})
+        pred_size = label._label.get_extents(text)
+        label.texture_update()
+        actual_size = tuple(label.texture_size)
+        assert actual_size == pred_size
+
+
 class Test_font_size:
 
     def test_affect_prediction(self, label_cls):
