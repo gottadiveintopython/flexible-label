@@ -184,7 +184,7 @@ class Test_bold_italic_fontname:
     )
 
     @parametrize
-    def test_needs_to_update_texture(self, label_cls, name, value):
+    def test_needs_to_resolve_font_name(self, label_cls, name, value):
         label = label_cls()
         label2 = label_cls(**{name: value})
         ge = label._label.get_extents
@@ -193,8 +193,7 @@ class Test_bold_italic_fontname:
         size2 = label2._label.get_extents(text)
         setattr(label, name, value)
         size3 = ge(text)
-        label.text = '.'
-        label.texture_update()
+        label._label.resolve_font_name()
         size4 = ge(text)
         assert size1 != size2
         assert size3 != size2
