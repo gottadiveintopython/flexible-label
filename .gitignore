@@ -4,5 +4,5 @@ bin/
 *.pyo
 .venv
 /temp/
-/tests/screenshot/
+/tests/failure_screenshot/
 /old_files/

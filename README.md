@@ -1,9 +1,11 @@
 # FontsizeAdjustmentBehavior
 
-## Test
+## How to test
+
+**WARNING: Test is extreamly heavy**
 
 ```
-make test
+$ make test
 ```
 
 ### 環境(Environment)
