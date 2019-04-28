@@ -1,6 +1,7 @@
 '''
-This test is not for `FlexibleLabel`, but for `Label._label.get_extents()`.
-Such a test is necessary because `FlexibleLabel` heavily relies on it.
+This test is not for `FontsizeAdjustmentBehavior`, but for
+`Label._label.get_extents()`. Such a test is necessary because
+`FontsizeAdjustmentBehavior` heavily relies on it.
 '''
 from functools import partial
 import random
