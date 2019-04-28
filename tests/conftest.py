@@ -15,7 +15,7 @@ PROVIDER = {
 def _get_fontfiles(*, fullpath=False):
     for dir_ in LabelBase.get_system_fonts_dir():
         for item in Path(dir_).iterdir():
-            if item.is_file() and item.suffix in ('.ttc', 'ttf', ):
+            if item.is_file() and item.suffix in ('.ttc', '.ttf', ):
                 yield item.absolute() if fullpath else item.name
 ALL_FONTS = tuple(_get_fontfiles())
 
