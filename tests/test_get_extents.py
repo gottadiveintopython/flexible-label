@@ -223,7 +223,6 @@ class Test_underline_strikethrough:
     def test_doesnt_affect_prediction(self, label_cls, name, value):
         label = label_cls()
         label2 = label_cls(**{name: value})
-        ge = label._label.get_extents
         text = 'Kivy'
         size1 = label._label.get_extents(text)
         size2 = label2._label.get_extents(text)
