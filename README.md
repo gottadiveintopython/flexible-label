@@ -60,11 +60,21 @@ MyLabel:
 
 ![](screenshot/font_size_min.png)
 
-## Things not allowed
+## Note
 
-### markup
+### Setting font\_size doesn't affect actual font\_size
 
-Setting `markup` to True is OK, but setting `text` to an actual markup-text hinders the adjustment.
+But listening to its changes is OK.
+
+```python
+label = MyLabel()
+label.font_size = 40  # doesn't affect actual font_size
+label.bind(font_size=some_func)  # OK
+```
+
+### about markup
+
+Setting `markup` to True is OK, but setting `text` to an actual markup-text is not, because it hinders the adjustment.
 
 ```yaml
 MyLabel:
@@ -74,7 +84,7 @@ MyLabel:
 
 ![](screenshot/failure_markup.png)
 
-### line\_height & max\_lines
+### about line\_height and max\_lines
 
 These properties need to be default-value.
 
@@ -87,14 +97,11 @@ These properties need to be default-value.
 $ make test
 ```
 
+Some test take a screenshot when a test case fails, so that You can see what happened.
+
 ## Environment
 
 - Python 3.7.1
 - Kivy 1.10.1
 - SDL2 2.0.4
 - SDL2-ttf 2.0.14
-
-## TODO
-
-- providerが対応していないpropertyを設定した場合の`get_extents()`の振るまいを確認
-- `markup=False, outline_width=2`のような情況での`get_extents()`の振るまいを確認
