@@ -1,5 +1,7 @@
 # FontsizeAdjustmentBehavior : Automatically adjust font_size of Label
 
+[日本語doc(jp_doc)](README_jp.md)
+
 ## Examples
 
 ### short text
