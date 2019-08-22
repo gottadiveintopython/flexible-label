@@ -16,7 +16,7 @@ pip install git+https://github.com/gottadiveintopython/fontsize-adjustment-behav
 from kivy.app import runTouchApp
 from kivy.lang import Builder
 
-import fontsizeadjustmentbehavior
+import fontsize_adjustment_behavior
 
 root = Builder.load_string('''
 <MyLabel@FontsizeAdjustmentBehavior+Label>:
