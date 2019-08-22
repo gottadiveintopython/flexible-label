@@ -14,7 +14,7 @@ from conftest import PROVIDER, ALL_FONTS
 from kivy.core.text import DEFAULT_FONT
 from kivy.uix.label import Label
 
-from fontsizeadjustmentbehavior import FontsizeAdjustmentBehavior
+from fontsize_adjustment_behavior import FontsizeAdjustmentBehavior
 
 
 class MyLabel(FontsizeAdjustmentBehavior, Label):

@@ -6,3 +6,4 @@ bin/
 /temp/
 /tests/failure_screenshot/
 /old_files/
+*.egg-info

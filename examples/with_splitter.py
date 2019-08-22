@@ -20,15 +20,9 @@ BoxLayout:
 def _test():
     from kivy.app import runTouchApp
     from kivy.lang import Builder
-    from fontsizeadjustmentbehavior import FontsizeAdjustmentBehavior
+    import fontsize_adjustment_behavior
 
     runTouchApp(Builder.load_string(KV_CODE))
-
-if __name__ == "__main__":
-    import sys
-    from pathlib import PurePath
-
-    sys.path.append(str(PurePath(__file__).parents[1]))
 
 
 _test()

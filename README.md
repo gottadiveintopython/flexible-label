@@ -2,6 +2,12 @@
 
 [日本語doc(jp_doc)](README_jp.md)
 
+## Installation
+
+```
+pip install git+https://github.com/gottadiveintopython/fontsize-adjustment-behavior#egg=fontsize_adjustment_behavior
+```
+
 ## Examples
 
 ### short text
@@ -93,13 +99,13 @@ These properties need to be default-value.
 
 ## How to test
 
-**WARNING: Test is extreamly heavy**
+**WARNING: The tests is extreamly heavy**
 
 ```
 $ make test
 ```
 
-Some test take a screenshot when a test case fails, so that You can see what happened.
+Some tests take a screenshot when a test case fails, so that You can visually see what happened.
 
 ## Environment
 

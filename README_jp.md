@@ -1,5 +1,11 @@
 # FontsizeAdjustmentBehavior : Labelのfont\_sizeの自動調節
 
+## Install方法
+
+```
+pip install git+https://github.com/gottadiveintopython/fontsize-adjustment-behavior#egg=fontsize_adjustment_behavior
+```
+
 ## 使用例
 
 ### 短い文字列
